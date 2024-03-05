@@ -22,14 +22,20 @@ public class Event {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "event_name")
-    private String eventName;
+    @Column(name = "guest_name")
+    private String guestName;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "title")
+    private String title;
 
     @Column(name = "date")
     private Date date;
+
+    @Column(name = "linkedin")
+    private String linkedin;
+
+    @Column(name = "is_active")
+    private int isActive;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Photo> photos;

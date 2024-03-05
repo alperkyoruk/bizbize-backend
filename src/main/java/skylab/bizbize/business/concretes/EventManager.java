@@ -24,7 +24,7 @@ public class EventManager implements EventService {
 
     @Override
     public Result addEvent(Event event) {
-        if(event.getEventName().isEmpty()){
+        if(event.getGuestName().isEmpty()){
             return new ErrorResult(Messages.eventNameCannotBeNull);
         }
         for (Photo photo : event.getPhotos()) {
