@@ -19,15 +19,18 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    int id;
+    private int id;
 
     @Column(name = "event_name")
-    String eventName;
+    private String eventName;
+
     @Column(name = "description")
-    String description;
+    private String description;
+
     @Column(name = "date")
-    Date date;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "event", cascade = CascadeType.ALL)
+    private Date date;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Photo> photos;
 
 

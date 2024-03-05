@@ -44,7 +44,7 @@ public class PhotoManager implements PhotoService {
 
     @Override
     public DataResult<List<Photo>> getPhotosByEventId(int eventId) {
-        var result = photoDao.findAllById(eventId);
+        List<Photo> result = photoDao.findAllById(eventId);
         if(result == null){
             return new SuccessDataResult<List<Photo>>(Messages.getPhotosByEventIdIsEmpty);
         }

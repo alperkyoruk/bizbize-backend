@@ -26,9 +26,6 @@ public class EventManager implements EventService {
         if(event.getEventName().isEmpty()){
             return new ErrorResult(Messages.eventNameCannotBeNull);
         }
-        if(event.getDate() == null){
-            return new ErrorResult(Messages.dateCannotBeNull);
-        }
 
         eventDao.save(event);
         return new SuccessResult(Messages.eventAddSuccess);
