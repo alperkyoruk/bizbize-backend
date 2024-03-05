@@ -6,4 +6,5 @@ import skylab.bizbize.entities.Event;
 public interface EventDao extends JpaRepository<Event, Integer> {
     Event findById(int id);
 
+    Event findByIsActive(int isActive);
 }

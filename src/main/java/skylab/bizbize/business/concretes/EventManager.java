@@ -53,4 +53,15 @@ public class EventManager implements EventService {
 
         return new SuccessDataResult<Event>(result, Messages.getEventByIdSuccess);
     }
+
+    @Override
+    public DataResult<Event> getActiveEvent(int id) {
+        var result = eventDao.findByIsActive(id);
+        if(result == null){
+            return new SuccessDataResult<Event>(Messages.eventDoesntExist);
+        }
+
+
+        return new SuccessDataResult<Event>(result, Messages.getEventByIdSuccess);
+    }
 }

@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/photos")
+@CrossOrigin(origins = {"http://localhost:3000"})
 public class PhotosController {
     private PhotoService photoService;
 

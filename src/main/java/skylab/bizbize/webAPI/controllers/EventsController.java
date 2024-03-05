@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/events")
+@CrossOrigin(origins = {"http://localhost:3000"})
 public class EventsController {
     private EventService eventService;
 
@@ -32,6 +33,11 @@ public class EventsController {
     @GetMapping("/getEventById")
     public DataResult<Event> getDepartmentById(@RequestParam int eventId){
         return eventService.getEventById(eventId);
+    }
+
+    @GetMapping("/getActiveEvent")
+    public DataResult<Event> getActiveEvent(@RequestParam int isActive){
+        return eventService.getActiveEvent(isActive);
     }
 
 }
