@@ -7,6 +7,7 @@ import skylab.bizbize.business.constants.Messages;
 import skylab.bizbize.core.utilities.result.*;
 import skylab.bizbize.dataAccess.abstracts.EventDao;
 import skylab.bizbize.entities.Event;
+import skylab.bizbize.entities.Photo;
 
 import java.util.List;
 
@@ -25,6 +26,9 @@ public class EventManager implements EventService {
     public Result addEvent(Event event) {
         if(event.getEventName().isEmpty()){
             return new ErrorResult(Messages.eventNameCannotBeNull);
+        }
+        for (Photo photo : event.getPhotos()) {
+            photo.setEvent(event); // Set the event reference for each photo
         }
 
         eventDao.save(event);
