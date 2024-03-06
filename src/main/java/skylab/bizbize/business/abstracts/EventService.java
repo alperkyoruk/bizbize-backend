@@ -17,4 +17,5 @@ public interface EventService {
   //  DataResult<Event> getActiveEvent(int id);
 
     DataResult<Event> getActiveEvent();
+
 }

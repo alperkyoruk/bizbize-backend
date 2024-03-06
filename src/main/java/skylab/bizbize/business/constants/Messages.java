@@ -2,6 +2,8 @@ package skylab.bizbize.business.constants;
 
 import skylab.bizbize.entities.Event;
 import skylab.bizbize.entities.Photo;
+import skylab.bizbize.entities.Staff;
+import skylab.bizbize.entities.User;
 
 import java.util.List;
 

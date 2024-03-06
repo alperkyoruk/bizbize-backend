@@ -2,6 +2,7 @@ package skylab.bizbize.business.concretes;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 import skylab.bizbize.business.abstracts.EventService;
 import skylab.bizbize.business.constants.Messages;
 import skylab.bizbize.core.utilities.result.*;
@@ -27,6 +28,8 @@ public class EventManager implements EventService {
         if(event.getGuestName().isEmpty()){
             return new ErrorResult(Messages.eventNameCannotBeNull);
         }
+
+
         for (Photo photo : event.getPhotos()) {
             photo.setEvent(event); // Set the event reference for each photo
         }
