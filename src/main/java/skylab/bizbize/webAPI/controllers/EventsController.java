@@ -36,8 +36,8 @@ public class EventsController {
     }
 
     @GetMapping("/getActiveEvent")
-    public DataResult<Event> getActiveEvent(@RequestParam int isActive){
-        return eventService.getActiveEvent(isActive);
+    public DataResult<Event> getActiveEvent(){
+        return eventService.getActiveEvent();
     }
 
 }

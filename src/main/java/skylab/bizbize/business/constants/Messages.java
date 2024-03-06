@@ -20,5 +20,6 @@ public class Messages {
     public static String getPhotosByEventIdIsEmpty = "No photos found for this event.";
     public static String getPhotosByEventIdIsSuccess = "Photos retrieved successfully for this event.";
 
+    public static String getActiveEventSuccess = "Active event retrieved successfully.";
 }
 
