@@ -44,9 +44,12 @@ public class SecurityConfig {
                                 .requestMatchers("/api/events/add").hasRole("ADMIN")
                                 .requestMatchers("/api/photos/getPhotoById").permitAll()
                                 .requestMatchers("/api/photos/getPhotosByEventId").permitAll()
-                                .requestMatchers("/api/auth/generateToken").permitAll()
-                                .requestMatchers("/api/auth/registerUser").permitAll()
-                                .requestMatchers("/api/staff/**").permitAll()
+                                .requestMatchers("/api/auth/generateToken").hasRole("ADMIN")
+                                .requestMatchers("/api/auth/registerUser").hasRole("ADMIN")
+                                .requestMatchers("/api/staff/getStaff").permitAll()
+                                .requestMatchers("/api/staff/getStaffById").permitAll()
+                                .requestMatchers("/api/staff/getStaffByFirstAndLastName").permitAll()
+                                .requestMatchers("/api/staff/add").hasRole("ADMIN")
 
 
                 )

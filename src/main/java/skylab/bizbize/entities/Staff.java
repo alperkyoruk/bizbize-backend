@@ -30,6 +30,9 @@ public class Staff {
     @Column(name = "department")
     private String department;
 
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "staff", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Photo photo;
+
 
 
 }

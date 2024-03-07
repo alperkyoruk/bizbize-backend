@@ -28,4 +28,9 @@ public class Photo {
     @JsonIgnore
     private Event event;
 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "staff_id", referencedColumnName = "id")
+    @JsonIgnore
+    private Staff staff;
+
 }
